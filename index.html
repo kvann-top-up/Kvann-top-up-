@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07102b">
+  <title>KVANN TOP UP — Game Top Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="nav">
+    <a class="brand" href="#">
+      <span class="brand-crown">♛</span>
+      <span><b>KVANN</b><small>TOP UP</small></span>
+    </a>
+    <nav>
+      <a class="active" href="#home">⌂ ទំព័រដើម</a>
+      <a href="#games">🎮 ហ្គេមទាំងអស់</a>
+      <a href="#how">▤ បញ្ជាទិញ</a>
+      <a href="#payment">▣ ទូទាត់</a>
+      <a href="#help">? ជំនួយ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="notifications">🔔</button>
+      <button class="ghost-btn" onclick="openTrack()">▢ ពិនិត្យ Order</button>
+      <a class="primary-btn" href="#games">ចាប់ផ្តើម</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <span class="eyebrow">⚡ FAST • SAFE • 24/7</span>
+        <h1>TOP UP <span>GAME</span><br>បានលឿន ក្នុងប៉ុន្មានវិនាទី</h1>
+        <p>បញ្ចូល Diamonds និង UC ដោយងាយស្រួល។ បង់ប្រាក់តាមវិធីដែលអ្នកពេញចិត្ត ហើយតាមដាន Order របស់អ្នកភ្លាមៗ។</p>
+        <div class="hero-actions">
+          <a class="primary-btn large" href="#games">💎 Top Up ឥឡូវនេះ</a>
+          <button class="ghost-btn large" onclick="openTrack()">🔎 ពិនិត្យ Order</button>
+        </div>
+        <div class="hero-stats">
+          <div><b>50K+</b><span>អតិថិជន</span></div>
+          <div><b>1–5s</b><span>ដំណើរការ*</span></div>
+          <div><b>24/7</b><span>Online</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="hero-game-card ff">
+          <div class="game-icon">🔥</div>
+          <strong>FREE FIRE</strong>
+          <small>DIAMONDS</small>
+        </div>
+        <div class="hero-game-card pubg">
+          <div class="game-icon">🎯</div>
+          <strong>PUBG</strong>
+          <small>MOBILE • UC</small>
+        </div>
+        <div class="hero-game-card mlbb">
+          <div class="game-icon">⚔️</div>
+          <strong>MLBB</strong>
+          <small>DIAMONDS</small>
+        </div>
+        <div class="floating-badge">100%<small>Secure</small></div>
+      </div>
+    </section>
+
+    <section id="how" class="shell steps">
+      <div class="step"><span>01</span><b>ជ្រើសរើសហ្គេម</b><small>ជ្រើស Game ដែលអ្នកចង់ Top Up</small></div>
+      <i>›</i>
+      <div class="step"><span>02</span><b>បញ្ចូល Player ID</b><small>ពិនិត្យ ID មុនបញ្ជាទិញ</small></div>
+      <i>›</i>
+      <div class="step"><span>03</span><b>ជ្រើស Package</b><small>ជ្រើសចំនួន Diamonds / UC</small></div>
+      <i>›</i>
+      <div class="step"><span>04</span><b>បង់ប្រាក់</b><small>QR / Wallet / Card</small></div>
+      <i>›</i>
+      <div class="step"><span>05</span><b>ទទួលបានភ្លាម</b><small>តាមដានស្ថានភាព Order</small></div>
+    </section>
+
+    <section id="games" class="shell content-grid">
+      <div class="games-panel">
+        <div class="section-title">
+          <div><span class="eyebrow">POPULAR</span><h2>ជ្រើសរើសហ្គេម</h2></div>
+          <span class="live"><i></i> ONLINE</span>
+        </div>
+
+        <div class="game-cards">
+          <button class="game-card active" data-game="freefire" onclick="selectGame('freefire')">
+            <div class="cover ff-cover"><span>🔥</span><strong>FREE FIRE</strong><small>DIAMONDS</small></div>
+            <div class="game-bottom"><b>Free Fire</b><span>›</span></div>
+          </button>
+          <button class="game-card" data-game="pubg" onclick="selectGame('pubg')">
+            <div class="cover pubg-cover"><span>🎯</span><strong>PUBG</strong><small>MOBILE • UC</small></div>
+            <div class="game-bottom"><b>PUBG Mobile</b><span>›</span></div>
+          </button>
+          <button class="game-card" data-game="mlbb" onclick="selectGame('mlbb')">
+            <div class="cover mlbb-cover"><span>⚔️</span><strong>MLBB</strong><small>DIAMONDS</small></div>
+            <div class="game-bottom"><b>Mobile Legends</b><span>›</span></div>
+          </button>
+        </div>
+
+        <div id="payment" class="payment-strip">
+          <span>វិធីបង់ប្រាក់:</span>
+          <b>ABA</b><b>Wing</b><b>ACLEDA</b><b>KHQR</b><b>VISA</b><b>Mastercard</b>
+        </div>
+      </div>
+
+      <aside class="checkout">
+        <div class="checkout-head">
+          <div><span class="eyebrow">QUICK CHECKOUT</span><h2 id="checkoutGame">Free Fire</h2></div>
+          <span id="unitBadge" class="unit">DIAMONDS</span>
+        </div>
+
+        <label>Player ID</label>
+        <div class="input-wrap"><span>♙</span><input id="playerId" placeholder="បញ្ចូល Player ID របស់អ្នក"></div>
+        <p class="hint">💡 សូមពិនិត្យ Player ID ឱ្យបានត្រឹមត្រូវ មុនបង់ប្រាក់</p>
+
+        <label>ជ្រើសរើស Package</label>
+        <div id="packages" class="packages"></div>
+
+        <label>វិធីបង់ប្រាក់</label>
+        <div class="payment-methods">
+          <button class="pay-method active" data-pay="khqr">▣ KHQR</button>
+          <button class="pay-method" data-pay="aba">ABA</button>
+          <button class="pay-method" data-pay="wing">Wing</button>
+        </div>
+
+        <div class="total">
+          <span>សរុប</span>
+          <strong id="totalPrice">$0.00</strong>
+        </div>
+
+        <button class="buy-btn" onclick="placeOrder()">🛒 បញ្ជាទិញឥឡូវនេះ</button>
+        <small class="secure-note">🔒 ការទូទាត់ត្រូវបានការពារ • Demo checkout ready for gateway integration</small>
+      </aside>
+    </section>
+
+    <section class="shell trust">
+      <div><b>50,000+</b><span>អតិថិជនបានប្រើប្រាស់</span></div>
+      <div><b>99,999+</b><span>ការបញ្ជាទិញ</span></div>
+      <div><b>1–5 វិនាទី</b><span>ដំណើរការរហ័ស*</span></div>
+      <div><b>100%</b><span>Secure Checkout</span></div>
+    </section>
+
+    <section id="help" class="shell help">
+      <div><span class="eyebrow">SUPPORT</span><h2>ត្រូវការជំនួយ?</h2><p>ប្រសិនបើ Order មិនទាន់ Complete សូមរក្សា Order ID ហើយទាក់ទង Support។</p></div>
+      <button class="ghost-btn" onclick="openTrack()">🔎 ពិនិត្យ Order</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><a class="brand"><span class="brand-crown">♛</span><span><b>KVANN</b><small>TOP UP</small></span></a><p>Play More • Top Up Faster • Be Stronger</p></div>
+    <div class="footer-links"><a href="#home">ទំព័រដើម</a><a href="#games">ហ្គេម</a><a href="#payment">ទូទាត់</a><a href="#help">ជំនួយ</a></div>
+    <div class="socials">f&nbsp;&nbsp;✈&nbsp;&nbsp;◎&nbsp;&nbsp;▶</div>
+    <p class="copyright">© 2026 KVANN TOP UP. All rights reserved.</p>
+  </footer>
+
+  <dialog id="trackDialog">
+    <form method="dialog" class="modal">
+      <button class="close" value="cancel">×</button>
+      <span class="eyebrow">ORDER TRACKING</span>
+      <h2>ពិនិត្យ Order</h2>
+      <input id="trackId" placeholder="ឧ. KVABC123">
+      <button class="buy-btn" type="button" onclick="trackOrder()">ពិនិត្យស្ថានភាព</button>
+      <div id="trackResult"></div>
+    </form>
+  </dialog>
+
+  <dialog id="orderDialog">
+    <form method="dialog" class="modal">
+      <button class="close" value="cancel">×</button>
+      <span class="eyebrow">ORDER CREATED</span>
+      <h2>បានបង្កើត Order!</h2>
+      <p>Order ID របស់អ្នក:</p>
+      <div class="order-code" id="newOrderId">—</div>
+      <p id="orderMessage"></p>
+      <button class="buy-btn" type="button" onclick="demoPay()">បន្តទៅ Demo Payment</button>
+      <button class="ghost-btn full" type="submit">បិទ</button>
+    </form>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>

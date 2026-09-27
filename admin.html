@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KVANN TOP UP — Admin</title>
+<link rel="stylesheet" href="/styles.css">
+<style>
+.admin{padding:35px 0}.table{width:100%;border-collapse:collapse;background:#07132e;border:1px solid #1c3975}.table th,.table td{padding:12px;border-bottom:1px solid #172e5c;text-align:left;font-size:12px}.table th{color:#37ddff}.badge{padding:4px 8px;border-radius:6px;background:#10264d;color:#3ee9ff}
+</style>
+</head>
+<body>
+<header class="nav"><a class="brand" href="/"><span class="brand-crown">♛</span><span><b>KVANN</b><small>ADMIN</small></span></a></header>
+<main class="shell admin">
+<span class="eyebrow">ADMIN DASHBOARD</span><h1 style="font-family:Rajdhani">Orders</h1>
+<button class="primary-btn" onclick="load()">↻ Refresh</button>
+<div style="overflow:auto;margin-top:18px"><table class="table"><thead><tr><th>Order</th><th>Game</th><th>Player</th><th>Package</th><th>Amount</th><th>Status</th><th>Top-up</th><th>Created</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main>
+<script>
+async function load(){
+ const data=await fetch('/api/admin/orders').then(r=>r.json());
+ document.getElementById('rows').innerHTML=data.map(o=>`<tr>
+ <td>${o.orderId}</td><td>${o.gameName}</td><td>${o.playerId}</td>
+ <td>${o.package.amount.toLocaleString()} ${o.package.currency}</td><td>$${o.amount.toFixed(2)}</td>
+ <td><span class="badge">${o.status}</span></td><td><span class="badge">${o.topupStatus}</span></td>
+ <td>${new Date(o.createdAt).toLocaleString()}</td></tr>`).join('') || '<tr><td colspan="8">No orders yet.</td></tr>';
+}
+load();
+</script>
+</body></html>
